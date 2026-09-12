@@ -7,7 +7,7 @@ Pauses spoken-subtitle timing while the game is paused. After unpausing, radio, 
 ## Requirements
 
 - Windows
-- Vampire: The Masquerade - Bloodlines, Vanilla or Unofficial Patch
+- Steam version of Vampire: The Masquerade - Bloodlines, Vanilla or Unofficial Patch
 - Original `Bin\engine.dll` with SHA-256 `9D00B2C1E5EDBAD052FB0B514634BA54574666E12D1B408C46CE141D51ED2313`
 
 ## Installation

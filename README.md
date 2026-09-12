@@ -9,7 +9,7 @@ This repository contains no complete game DLL. The Installer verifies `Bin\engin
 ## Requirements
 
 - Windows
-- Vampire: The Masquerade - Bloodlines, Vanilla or Unofficial Patch
+- Steam version of Vampire: The Masquerade - Bloodlines, Vanilla or Unofficial Patch
 - Supported original `Bin\engine.dll`
 
 ## Building
