@@ -1,0 +1,43 @@
+name: Build
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Build and verify with Windows PowerShell 5.1
+        shell: powershell
+        run: |
+          .\Build.ps1
+          $installer = '.\build\VTMB Subtitle Pause Fix\Installer.exe'
+          $process = Start-Process -FilePath $installer -ArgumentList '--verify', '--quiet' -Wait -PassThru -NoNewWindow
+          if ($process.ExitCode -ne 0) { throw "Package verification failed with exit code $($process.ExitCode)." }
+          $version = (Get-Item -LiteralPath $installer).VersionInfo
+          if ($version.ProductVersion -ne '1.0.1') { throw "Unexpected product version: $($version.ProductVersion)" }
+          if ($version.CompanyName -ne 'Ant2684') { throw "Unexpected company: $($version.CompanyName)" }
+          $expected = @('Installer.exe', 'README.md')
+          $actual = @(Get-ChildItem -LiteralPath '.\build\VTMB Subtitle Pause Fix' -Force | ForEach-Object Name | Sort-Object)
+          if (Compare-Object ($expected | Sort-Object) $actual) { throw 'Unexpected public package contents.' }
+          $forbidden = @(git ls-files | Where-Object { [IO.Path]::GetExtension($_) -in '.dll', '.bsp', '.mdl', '.vpk', '.ico' })
+          if ($forbidden.Count) { throw "Tracked game-derived binary files: $($forbidden -join ', ')" }
+
+      - name: Build and verify with PowerShell 7
+        shell: pwsh
+        run: |
+          .\Build.ps1
+          $installer = '.\build\VTMB Subtitle Pause Fix\Installer.exe'
+          $process = Start-Process -FilePath $installer -ArgumentList '--verify', '--quiet' -Wait -PassThru -NoNewWindow
+          if ($process.ExitCode -ne 0) { throw "Package verification failed with exit code $($process.ExitCode)." }
+          $version = (Get-Item -LiteralPath $installer).VersionInfo
+          if ($version.ProductVersion -ne '1.0.1') { throw "Unexpected product version: $($version.ProductVersion)" }
+          if ($version.CompanyName -ne 'Ant2684') { throw "Unexpected company: $($version.CompanyName)" }
+          $expected = @('Installer.exe', 'README.md')
+          $actual = @(Get-ChildItem -LiteralPath '.\build\VTMB Subtitle Pause Fix' -Force | ForEach-Object Name | Sort-Object)
+          if (Compare-Object ($expected | Sort-Object) $actual) { throw 'Unexpected public package contents.' }
+          $forbidden = @(git ls-files | Where-Object { [IO.Path]::GetExtension($_) -in '.dll', '.bsp', '.mdl', '.vpk', '.ico' })
+          if ($forbidden.Count) { throw "Tracked game-derived binary files: $($forbidden -join ', ')" }

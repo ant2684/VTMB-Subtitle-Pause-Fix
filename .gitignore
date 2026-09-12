@@ -1,0 +1,8 @@
+/build/
+/.vs/
+*.suo
+*.user
+Thumbs.db
+**/Backup/
+**/install-state.json
+**/.transaction-*/

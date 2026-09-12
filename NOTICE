@@ -1,0 +1,11 @@
+VTMB Subtitle Pause Fix
+Copyright (c) 2026 Ant2684
+
+The MIT License applies to the original source code, patch recipe, scripts,
+icon generator and documentation in this repository.
+
+No complete Vampire: The Masquerade - Bloodlines DLL is included. The software
+operates only on `Bin\engine.dll` in a user-selected local installation.
+
+Vampire: The Masquerade - Bloodlines and related names and trademarks belong
+to their respective owners. No ownership of the original game is claimed.

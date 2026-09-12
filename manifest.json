@@ -1,0 +1,14 @@
+{
+  "formatVersion": 1,
+  "packageId": "vtmb-subtitle-pause-fix",
+  "packageName": "VTMB Subtitle Pause Fix",
+  "packageVersion": "1.0.1",
+  "target": {
+    "relativePath": "Bin/engine.dll",
+    "recipe": "subtitle-pause-fix",
+    "originalSha256": "9D00B2C1E5EDBAD052FB0B514634BA54574666E12D1B408C46CE141D51ED2313",
+    "originalSize": 1986620,
+    "patchedSha256": "0BF8FD2EAC8CB1D1E144CF4EC9C906061B893F3DB5D9810D01CC1E406F311ED9",
+    "patchedSize": 1998848
+  }
+}
