@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "packageId": "vtmb-subtitle-pause-fix",
   "packageName": "VTMB Subtitle Pause Fix",
-  "packageVersion": "1.0.1",
+  "packageVersion": "1.0.0",
   "target": {
     "relativePath": "Bin/engine.dll",
     "recipe": "subtitle-pause-fix",

@@ -24,9 +24,9 @@ using System.Windows.Forms;
 [assembly: AssemblyTitle("VTMB Subtitle Pause Fix Installer")]
 [assembly: AssemblyProduct("VTMB Subtitle Pause Fix")]
 [assembly: AssemblyDescription("Installer for VTMB Subtitle Pause Fix")]
-[assembly: AssemblyVersion("1.0.1.0")]
-[assembly: AssemblyFileVersion("1.0.1.0")]
-[assembly: AssemblyInformationalVersion("1.0.1")]
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyInformationalVersion("1.0.0")]
 #endif
 [assembly: AssemblyCompany("Ant2684")]
 [assembly: AssemblyCopyright("Copyright © Ant2684 2026")]
@@ -233,7 +233,7 @@ namespace VtmbInstaller
             IsProtean = string.Equals(Manifest.packageId, "vtmb-protean-mod-pack", StringComparison.Ordinal);
             if (!IsProtean && !string.Equals(Manifest.packageId, "vtmb-subtitle-pause-fix", StringComparison.Ordinal))
                 throw new InvalidOperationException("The embedded package identifier is invalid.");
-            string expectedVersion = IsProtean ? "1.0.2" : "1.0.1";
+            string expectedVersion = IsProtean ? "1.0.2" : "1.0.0";
             if (!string.Equals(Manifest.packageVersion, expectedVersion, StringComparison.Ordinal))
                 throw new InvalidOperationException("The embedded package version is invalid.");
         }

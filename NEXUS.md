@@ -1,6 +1,6 @@
 # Nexus Mods publication notes
 
-## Version 1.0.1 summary
+## Version 1.0.0 summary
 
 The package is now patch-only. It contains no complete game DLL. The Installer validates the user's local `Bin\engine.dll` and builds the fix locally from an embedded changed-byte recipe.
 

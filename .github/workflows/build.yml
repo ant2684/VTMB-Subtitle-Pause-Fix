@@ -18,7 +18,7 @@ jobs:
           $process = Start-Process -FilePath $installer -ArgumentList '--verify', '--quiet' -Wait -PassThru -NoNewWindow
           if ($process.ExitCode -ne 0) { throw "Package verification failed with exit code $($process.ExitCode)." }
           $version = (Get-Item -LiteralPath $installer).VersionInfo
-          if ($version.ProductVersion -ne '1.0.1') { throw "Unexpected product version: $($version.ProductVersion)" }
+          if ($version.ProductVersion -ne '1.0.0') { throw "Unexpected product version: $($version.ProductVersion)" }
           if ($version.CompanyName -ne 'Ant2684') { throw "Unexpected company: $($version.CompanyName)" }
           $expected = @('Installer.exe', 'README.md')
           $actual = @(Get-ChildItem -LiteralPath '.\build\VTMB Subtitle Pause Fix' -Force | ForEach-Object Name | Sort-Object)
@@ -34,7 +34,7 @@ jobs:
           $process = Start-Process -FilePath $installer -ArgumentList '--verify', '--quiet' -Wait -PassThru -NoNewWindow
           if ($process.ExitCode -ne 0) { throw "Package verification failed with exit code $($process.ExitCode)." }
           $version = (Get-Item -LiteralPath $installer).VersionInfo
-          if ($version.ProductVersion -ne '1.0.1') { throw "Unexpected product version: $($version.ProductVersion)" }
+          if ($version.ProductVersion -ne '1.0.0') { throw "Unexpected product version: $($version.ProductVersion)" }
           if ($version.CompanyName -ne 'Ant2684') { throw "Unexpected company: $($version.CompanyName)" }
           $expected = @('Installer.exe', 'README.md')
           $actual = @(Get-ChildItem -LiteralPath '.\build\VTMB Subtitle Pause Fix' -Force | ForEach-Object Name | Sort-Object)

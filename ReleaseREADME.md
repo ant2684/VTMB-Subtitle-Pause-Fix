@@ -1,6 +1,6 @@
 # VTMB Subtitle Pause Fix
 
-Version 1.0.1
+Version 1.0.0
 
 Pauses spoken-subtitle timing while the game is paused. After unpausing, radio, television and cinematic subtitles continue from the same point instead of skipping the paused interval.
 
